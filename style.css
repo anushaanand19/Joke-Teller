@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+
+  display: flex;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("./robot.gif");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-color: rgb(69, 186, 221);
+  background-size: contain;
+}
+
+.button {
+  border-radius: 8px;
+  background-position-x: right;
+  padding: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(255, 52, 130);
+  color: white;
+  letter-spacing: 4px;
+  font-family: "Courier New", Courier, monospace;
+  border: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .button {
+    margin-top: 240px;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
