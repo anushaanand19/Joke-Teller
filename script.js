@@ -2,18 +2,16 @@ const speech = window.speechSynthesis;
 const button = document.getElementById('button');
 const apiUrl = "https://joke3.p.rapidapi.com/v1/joke"
 
+//Disable/Enable button
+function toggleButton() {
+    button.disabled = !button.disabled;
+}
+
 function textToSpeech(joke) {
-    let utterance = new SpeechSynthesisUtterance(joke.content);
-    console.log(utterance);
+    const utterance = new SpeechSynthesisUtterance(joke.content);
     speech.speak(utterance); 
-    utterance.onstart = () => {
-        button.disabled = true;
-        console.log('speech started', button.disabled, utterance.onstart);
-    }
-    utterance.onend = () => {
-        button.disabled = false;
-        console.log('speech ended', button.disabled)
-    }
+    utterance.onstart = () => toggleButton();
+    utterance.onend = () => toggleButton();
 }
 
 async function getJokes() {
@@ -25,6 +23,7 @@ async function getJokes() {
     });
     const joke = await getJoke.json();
     textToSpeech(joke);   
+    
 }
 
 button.addEventListener('click', getJokes);
