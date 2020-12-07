@@ -8,9 +8,13 @@
     <title>Joke Teller</title>
 </head>
 <body>
-    <div class="container" id="container">
-            <button class = "button" type="submit" id="button">Tell Me A Joke</button>
-            <audio src="" ></audio>
+    <div class="container zoom-in-before" id="container" >
+            <a class = "button" type="submit" id="button">Tell Me A Joke</a>
+            <div class="joke-container" id="joke-container" hidden>
+                <a class="close" href="#">&times;</a>
+                <div class="joke-content" id="joke-content" hidden>
+                </div>
+            </div>
     </div>
     
     <script src="script.js"></script>
